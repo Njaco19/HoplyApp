@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainScreen">
+
+    <fragment
+        android:id="@+id/MainScreen"
+        android:name="com.example.hoplyapp.FirstFragment"
+        android:label="MainScreen"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/RegisterScreen" />
+        <action
+            android:id="@+id/action_FirstFragment_to_loginScreen"
+            app:destination="@id/LoginScreen" />
+        <action
+            android:id="@+id/action_MainScreen_to_allUsers"
+            app:destination="@id/allUsers" />
+    </fragment>
+    <fragment
+        android:id="@+id/RegisterScreen"
+        android:name="com.example.hoplyapp.SecondFragment"
+        android:label="RegisterScreen"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/MainScreen" />
+        <action
+            android:id="@+id/action_SecondFragment_to_loginScreen"
+            app:destination="@id/LoginScreen" />
+        <action
+            android:id="@+id/action_SecondFragment_to_frontPage"
+            app:destination="@id/FrontPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/LoginScreen"
+        android:name="com.example.hoplyapp.LoginScreen"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreen_to_FirstFragment"
+            app:destination="@id/MainScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_frontPage"
+            app:destination="@id/FrontPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/FrontPage"
+        android:name="com.example.hoplyapp.FrontPage"
+        android:label="fragment_front_page"
+        tools:layout="@layout/fragment_front_page" >
+        <action
+            android:id="@+id/action_FrontPage_to_createPost"
+            app:destination="@id/createPost" />
+        <action
+            android:id="@+id/action_FrontPage_to_postView"
+            app:destination="@id/postView" />
+        <action
+            android:id="@+id/action_FrontPage_to_changeName2"
+            app:destination="@id/ChangeName" />
+        <action
+            android:id="@+id/action_FrontPage_to_MainScreen"
+            app:destination="@id/MainScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/allUsers"
+        android:name="com.example.hoplyapp.AllUsers"
+        android:label="fragment_all_users"
+        tools:layout="@layout/fragment_all_users" />
+    <fragment
+        android:id="@+id/createPost"
+        android:name="com.example.hoplyapp.CreatePost"
+        android:label="fragment_create_post"
+        tools:layout="@layout/fragment_create_post" >
+        <action
+            android:id="@+id/action_createPost_to_FrontPage"
+            app:destination="@id/FrontPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/postView"
+        android:name="com.example.hoplyapp.PostView"
+        android:label="fragment_post_view"
+        tools:layout="@layout/fragment_post_view" >
+        <action
+            android:id="@+id/action_postView_to_FrontPage"
+            app:destination="@id/FrontPage" />
+        <action
+            android:id="@+id/action_postView_self"
+            app:destination="@id/postView" />
+    </fragment>
+    <fragment
+        android:id="@+id/ChangeName"
+        android:name="com.example.hoplyapp.ChangeName"
+        android:label="fragment_change_name"
+        tools:layout="@layout/fragment_change_name" >
+        <action
+            android:id="@+id/action_ChangeName_to_FrontPage"
+            app:destination="@id/FrontPage" />
+    </fragment>
+</navigation>
